@@ -35,3 +35,11 @@ stow
 chmod
 chown
 make
+rsync
+systemd
+systemctl
+nginx
+gh
+curl
+ffmpeg
+

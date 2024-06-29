@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
 	selected=$1
 else
-	selected=$(find ~/Documents/origin ~/Documents/personal ~/Documents/origin/sourcecontrol-utils/repos ~ -mindepth 1 -maxdepth 1 -type d | fzf)
+	selected=$(find ~/Documents/origin ~/Documents/personal ~/Documents/origin/sourcecontrol-utils/repos ~ -mindepth 1 -maxdepth 1 -type d | cat - <(echo ~/Documents/personal) | cat - <(echo ~/Documents/origin) | fzf)
 fi
 
 if [[ -z $selected ]]; then

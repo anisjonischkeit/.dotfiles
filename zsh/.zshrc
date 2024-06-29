@@ -126,3 +126,11 @@ alias v=nvim
 [ -s "/Users/a/.bun/_bun" ] && source "/Users/a/.bun/_bun"
 
 bindkey -s ^f "tmux-sessionizer\n"
+
+# pnpm
+export PNPM_HOME="/Users/a/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

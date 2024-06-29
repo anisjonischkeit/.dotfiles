@@ -6,15 +6,6 @@ export PATH=~/.local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# FIX FOR NEOVIM
-export LANGUAGE=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LC_TYPE=en_US.UTF-8
-
-# EXTRA NODE CA CERT
-export NODE_EXTRA_CA_CERTS=~/.certs/osg_curl_ca_bundle.pem
-export SSL_CERT_DIR=~/.certs
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,

@@ -1,0 +1,1 @@
+export TMUX_SESSIONIZER_DIRECTORIES="$(find ~/Documents -mindepth 1 -maxdepth 1 -type d)\n$HOME/.dotfiles"

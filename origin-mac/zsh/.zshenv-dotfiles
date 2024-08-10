@@ -1,0 +1,12 @@
+# EXTRA NODE CA CERT
+export NODE_EXTRA_CA_CERTS=~/.certs/osg_curl_ca_bundle.pem
+export SSL_CERT_DIR=~/.certs
+
+# FIX FOR NEOVIM
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_TYPE=en_US.UTF-8
+
+# SESSIONIZER
+export TMUX_SESSIONIZER_DIRECTORIES="$(find ~/Documents/origin ~/Documents/personal ~/Documents/origin/sourcecontrol-utils/repos ~ -mindepth 1 -maxdepth 1 -type d)\n$HOME/Documents/personal\n$HOME/Documents/origin"

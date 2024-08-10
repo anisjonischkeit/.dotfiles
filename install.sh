@@ -5,15 +5,21 @@
 export DOTFILES=$HOME/.dotfiles
 export STOW_FOLDERS="bin,zsh,tmux"
 
+source ~/.zshenv-local
+
+if [ -z "$device_name" ] && [ "${TERMUX_VERSION+x}" ]; then
+	export device_name="termux"
+fi
+
 pushd $DOTFILES
 for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g"); do
 	echo "stow $folder"
 	stow --no-folding -R $folder
 done
-popd
 
-if [ ${TERMUX_VERSION+x} ]; then
-	pushd ./termux/; \
-        ./install.sh; \
-	popd;
+if [ ${device_name+x} ]; then
+	popd
+	pushd "./$device_name/"
+	./install.sh
+	popd
 fi

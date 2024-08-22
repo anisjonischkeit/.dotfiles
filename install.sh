@@ -18,8 +18,9 @@ for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g"); do
 done
 
 if [ ${device_name+x} ]; then
-	popd
 	pushd "./$device_name/"
 	./install.sh
 	popd
 fi
+
+popd

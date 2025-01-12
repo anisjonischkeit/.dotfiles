@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export STOW_FOLDERS="zsh"
+export STOW_FOLDERS="zsh,aerospace"
 export OPTIONAL_STOW_FOLDERS="nvim"
 
 for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g"); do

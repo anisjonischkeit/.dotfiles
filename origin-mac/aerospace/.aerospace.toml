@@ -136,7 +136,7 @@ alt-m = 'workspace M'
 alt-n = 'workspace N'
 alt-o = 'workspace O'
 alt-p = 'workspace P'
-alt-q = 'workspace Q'
+# alt-q = 'workspace Q' #clashes with vim quickfix
 alt-r = 'workspace R'
 alt-s = 'workspace S'
 alt-t = 'workspace T'
@@ -217,10 +217,6 @@ if.app-id = 'com.google.Chrome'
 run = 'move-node-to-workspace B'
 
 [[on-window-detected]]
-if.app-id = 'org.chromium.Chromium'
-run = 'move-node-to-workspace B'
-
-[[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
 run = 'move-node-to-workspace B'
 
@@ -237,4 +233,8 @@ if.app-id = 'com.riotgames.RiotGames.RiotClient'
 run = 'layout floating'
 [[on-window-detected]]
 if.app-id = 'com.riotgames.LeagueofLegends.LeagueClientUx'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'org.chromium.Chromium'
 run = 'layout floating'

@@ -1,6 +1,16 @@
+export ZK_NOTEBOOK_DIR="User/anis/Documents/notes"
+
 export TMUX_SESSIONIZER_DIRECTORIES="$(find ~/Documents -mindepth 1 -maxdepth 1 -type d)\n$HOME/.dotfiles"
 
 export ANDROID_HOME=$HOME/Android/Sdk
 export ANDROID_SDK_ROOT=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# Pull Notes on Startup
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/anis-gitea-nas-key
+pushd ~/Documents/notes
+git pull
+popd
+

@@ -1,6 +1,6 @@
 # BREW
 export PATH=$PATH:/opt/homebrew/bin
-export ZK_NOTEBOOK_DIR="~/Documents/notes"
+export ZK_NOTEBOOK_DIR="/User/anis/Documents/notes"
 
 # FIX FOR NEOVIM
 export LANGUAGE=en_US.UTF-8

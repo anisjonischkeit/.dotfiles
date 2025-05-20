@@ -1,3 +1,0 @@
-[submodule "optional/nvim/.config/nvim"]
-	path = optional/nvim/.config/nvim
-	url = git@github.com:anisjonischkeit/kickstart.nvim.git

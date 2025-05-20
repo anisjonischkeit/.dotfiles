@@ -1,0 +1,12 @@
+# BREW
+export PATH=$PATH:/opt/homebrew/bin
+export ZK_NOTEBOOK_DIR="~/Documents/notes"
+
+# FIX FOR NEOVIM
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_TYPE=en_US.UTF-8
+
+# SESSIONIZER
+export TMUX_SESSIONIZER_DIRECTORIES="$(find ~/repos ~ -mindepth 1 -maxdepth 1 -type d)"

@@ -9,4 +9,4 @@ export LANG=en_US.UTF-8
 export LC_TYPE=en_US.UTF-8
 
 # SESSIONIZER
-export TMUX_SESSIONIZER_DIRECTORIES="$(find ~/Documents/origin ~/Documents/personal ~/Documents/origin/sourcecontrol-utils/repos ~ -mindepth 1 -maxdepth 1 -type d)\n$HOME/Documents/personal\n$HOME/Documents/origin"
+export TMUX_SESSIONIZER_DIRECTORIES="$(find ~/origin ~/personal ~/origin/sourcecontrol-utils/repos ~ -mindepth 1 -maxdepth 1 -type d)\n$HOME/personal\n$HOME/origin"

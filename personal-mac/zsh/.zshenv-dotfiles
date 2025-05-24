@@ -1,6 +1,11 @@
-# BREW
-export PATH=$PATH:/opt/homebrew/bin
-export ZK_NOTEBOOK_DIR="/User/anis/Documents/notes"
+# Metal Support (introduced for organic maps compile)
+# METALC path can be found by running `xcrun -f metal`
+export METALC=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/metal
+
+export ZK_NOTEBOOK_DIR="/Users/anis/Documents/notes"
+
+
+export ZK_NOTEBOOK_DIR="/Users/anis/Documents/notes"
 
 # FIX FOR NEOVIM
 export LANGUAGE=en_US.UTF-8

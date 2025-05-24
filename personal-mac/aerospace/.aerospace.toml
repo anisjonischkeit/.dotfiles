@@ -125,8 +125,6 @@ alt-7 = 'workspace 7'
 alt-8 = 'workspace 8'
 alt-9 = 'workspace 9'
 
-# USE `aerospace list-apps` to see the app-ids of all running apps
-
 alt-a = 'workspace A' # In your config, you can drop workspace bindings that you don't need
 alt-shift-a = 'move-node-to-workspace A'
 alt-b = 'workspace Browser'
@@ -165,8 +163,8 @@ alt-v = 'workspace V'
 alt-shift-v = 'move-node-to-workspace V'
 alt-w = 'workspace W'
 alt-shift-w = 'move-node-to-workspace W'
-alt-x = 'workspace X'
-alt-shift-x = 'move-node-to-workspace X'
+alt-x = 'workspace Xcode'
+alt-shift-x = 'move-node-to-workspace Xcode'
 alt-y = 'workspace Y'
 alt-shift-y = 'move-node-to-workspace Y'
 alt-z = 'workspace Z'
@@ -207,6 +205,7 @@ alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
+# USE `aerospace list-apps` to see the app-ids of all running apps
 [[on-window-detected]]
 if.app-id = 'company.thebrowser.Browser'
 run = 'move-node-to-workspace Browser'
@@ -234,6 +233,10 @@ run = 'move-node-to-workspace Notes'
 [[on-window-detected]]
 if.app-id = 'com.kovidgoyal.kitty'
 run = 'move-node-to-workspace Terminal'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.dt.Xcode'
+run = 'move-node-to-workspace Xcode'
 
 # Floating Unbound Windows
 [[on-window-detected]]

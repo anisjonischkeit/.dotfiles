@@ -14,4 +14,5 @@ export LANG=en_US.UTF-8
 export LC_TYPE=en_US.UTF-8
 
 # SESSIONIZER
-export TMUX_SESSIONIZER_DIRECTORIES="$(find ~/repos ~ -mindepth 1 -maxdepth 1 -type d)"
+export TMUX_SESSIONIZER_DIRECTORIES="$HOME/Documents/notes
+$(find ~/repos ~ -mindepth 1 -maxdepth 1 -type d)"

@@ -238,6 +238,19 @@ run = 'move-node-to-workspace Terminal'
 if.app-id = 'com.apple.dt.Xcode'
 run = 'move-node-to-workspace Xcode'
 
+[[on-window-detected]]
+if.app-id = 'org.whispersystems.signal-desktop'
+run = 'move-node-to-workspace Chats'
+
+[[on-window-detected]]
+if.app-id = 'net.whatsapp.WhatsApp'
+run = 'move-node-to-workspace Chats'
+
+[[on-window-detected]]
+if.app-id = 'ch.threema.threema-desktop'
+run = 'move-node-to-workspace Chats'
+
+
 # Floating Unbound Windows
 [[on-window-detected]]
 if.app-id = 'org.chromium.Chromium'

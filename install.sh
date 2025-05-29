@@ -23,4 +23,7 @@ if [ ${device_name+x} ]; then
   popd
 fi
 
+echo "Generating Aerospace Tmux Passthrough"
+./.extras/aerospace/tmux-to-aerospace-generator.py
+
 popd

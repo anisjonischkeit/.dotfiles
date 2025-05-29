@@ -21,8 +21,9 @@ THE_KEY="$1"
 # fi
 # echo "DEBUG: Key to use: '$THE_KEY'"
 
+aerospace mode main
 echo "DEBUG: Getting current frontmost application..."
-FRONTMOST_APP_BUNDLE_ID=$(osascript -e 'tell application "System Events" to get bundle identifier of first process whose frontmost is true')
+FRONTMOST_APP_BUNDLE_ID=$(osascript ~/.dotfiles/.extras/aerospace/get_first_process.scpt)
 echo "DEBUG: Current frontmost app Bundle ID: '$FRONTMOST_APP_BUNDLE_ID'"
 echo "DEBUG: Target Kitty Bundle ID: '$KITTY_BUNDLE_ID'"
 
@@ -32,18 +33,17 @@ if [ "$FRONTMOST_APP_BUNDLE_ID" != "$KITTY_BUNDLE_ID" ]; then
   # Test if 'aerospace focus' produces output (it might be the source of '2')
   # For now, let it print if it does.
   echo "DEBUG: 'aerospace focus' command finished. Pausing for 0.6s..."
-  sleep 0.1 # Increased pause for focus to take effect
+  #  sleep 0.1 # Increased pause for focus to take effect
   echo "DEBUG: Pause finished."
 else
   echo "DEBUG: Current app IS Kitty. No 'aerospace focus' needed."
 fi
 
 echo "DEBUG: Executing AppleScript..."
-osascript_output=$(~/.dotfiles/.extras/aerospace/send-keys.applescript "$THE_KEY" "$KITTY_PROCESS_NAME" "$KITTY_BUNDLE_ID")
+osascript_output=$(osascript ~/.dotfiles/.extras/aerospace/send_tmux_key.scpt "$THE_KEY" "$KITTY_PROCESS_NAME" "$KITTY_BUNDLE_ID")
 echo "DEBUG: AppleScript execution finished by shell. Output (if any): $osascript_output"
 
 echo "DEBUG: Executing 'aerospace mode main'..."
-aerospace mode main
 # Test if 'aerospace mode main' produces output (it might be the source of '2')
 # For now, let it print if it does.
 echo "DEBUG: 'aerospace mode main' finished. Script effectively ended."

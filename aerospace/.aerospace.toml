@@ -252,6 +252,18 @@ run = 'move-node-to-workspace Xcode'
 if.app-id = 'org.chromium.Chromium'
 run = 'layout floating'
 
+[[on-window-detected]]
+if.app-id = 'org.whispersystems.signal-desktop'
+run = 'move-node-to-workspace Chats'
+
+[[on-window-detected]]
+if.app-id = 'net.whatsapp.WhatsApp'
+run = 'move-node-to-workspace Chats'
+
+[[on-window-detected]]
+if.app-id = 'ch.threema.threema-desktop'
+run = 'move-node-to-workspace Chats'
+
 
 # >>> START TMUX AUTO-GENERATED BINDINGS FOR MODE: tmux_passthrough_mode
 [mode.tmux_passthrough_mode.binding]

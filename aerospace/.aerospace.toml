@@ -14,7 +14,7 @@ after-startup-command = []
 # Start AeroSpace at login
 start-at-login = true
 
-# Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
+# Normalisations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true
 
@@ -58,11 +58,11 @@ preset = 'qwerty'
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
 inner.horizontal = 0 #5
-inner.vertical =   0 #5
-outer.left =       0 #5
-outer.bottom =     0 #5
-outer.top =        0 #5
-outer.right =      0 #5
+inner.vertical = 0   #5
+outer.left = 0       #5
+outer.bottom = 0     #5
+outer.top = 0        #5
+outer.right = 0      #5
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -125,7 +125,7 @@ alt-7 = 'workspace 7'
 alt-8 = 'workspace 8'
 alt-9 = 'workspace 9'
 
-alt-a = 'workspace A' # In your config, you can drop workspace bindings that you don't need
+alt-a = 'workspace A'                           # In your config, you can drop workspace bindings that you don't need
 alt-shift-a = 'move-node-to-workspace A'
 alt-b = 'workspace Browser'
 alt-shift-b = 'move-node-to-workspace Browser'
@@ -141,8 +141,8 @@ alt-g = 'workspace G'
 alt-shift-g = 'move-node-to-workspace G'
 alt-i = 'workspace I'
 alt-shift-i = 'move-node-to-workspace I'
-alt-m = 'workspace M'
-alt-shift-m = 'move-node-to-workspace M'
+alt-m = 'workspace Meetings'
+alt-shift-m = 'move-node-to-workspace Meetings'
 alt-n = 'workspace Notes'
 alt-shift-n = 'move-node-to-workspace N'
 alt-o = 'workspace O'
@@ -188,16 +188,21 @@ alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'
+ctrl-b = 'mode tmux_passthrough_mode'
+# ctrl-b = 'exec-and-forget switch-to-tmux-passthrough-mode.sh'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
-f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
+f = [
+  'layout floating tiling',
+  'mode main',
+] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
 
-# sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
+# Sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
 #s = ['layout sticky tiling', 'mode main']
 
 alt-shift-h = ['join-with left', 'mode main']
@@ -227,6 +232,10 @@ if.app-id = 'com.apple.finder'
 run = ['layout floating', 'move-node-to-workspace Finder']
 
 [[on-window-detected]]
+if.app-id = 'com.microsoft.teams2'
+run = 'move-node-to-workspace Meetings'
+
+[[on-window-detected]]
 if.app-id = 'md.obsidian'
 run = 'move-node-to-workspace Notes'
 
@@ -242,3 +251,62 @@ run = 'move-node-to-workspace Xcode'
 [[on-window-detected]]
 if.app-id = 'org.chromium.Chromium'
 run = 'layout floating'
+
+[mode.tmux_passthrough_mode.binding]
+1 = ["exec-and-forget ~/.dotfiles/.extras/aerospace/aerospace_tmux_bridge.sh 1"]
+2 = ["exec-and-forget ~/.dotfiles/.extras/aerospace/aerospace_tmux_bridge.sh 2"]
+#3 = ["exec-and-forget aerospace_tmux_bridge.sh 3"]
+#4 = ["exec-and-forget aerospace_tmux_bridge.sh 4"]
+#5 = ["exec-and-forget aerospace_tmux_bridge.sh 5"]
+#6 = ["exec-and-forget aerospace_tmux_bridge.sh 6"]
+#7 = ["exec-and-forget aerospace_tmux_bridge.sh 7"]
+#8 = ["exec-and-forget aerospace_tmux_bridge.sh 8"]
+#9 = ["exec-and-forget aerospace_tmux_bridge.sh 9"]
+#0 = ["exec-and-forget aerospace_tmux_bridge.sh 0"]
+#
+#q = ["exec-and-forget aerospace_tmux_bridge.sh q", "mode main"]
+#w = ["exec-and-forget aerospace_tmux_bridge.sh w", "mode main"]
+#e = ["exec-and-forget aerospace_tmux_bridge.sh e", "mode main"]
+#r = ["exec-and-forget aerospace_tmux_bridge.sh r", "mode main"]
+#t = ["exec-and-forget aerospace_tmux_bridge.sh t", "mode main"]
+#y = ["exec-and-forget aerospace_tmux_bridge.sh y", "mode main"]
+#u = ["exec-and-forget aerospace_tmux_bridge.sh u", "mode main"]
+#i = ["exec-and-forget aerospace_tmux_bridge.sh i", "mode main"]
+#o = ["exec-and-forget aerospace_tmux_bridge.sh o", "mode main"]
+#p = ["exec-and-forget aerospace_tmux_bridge.sh p", "mode main"]
+#a = ["exec-and-forget aerospace_tmux_bridge.sh a", "mode main"]
+#s = ["exec-and-forget aerospace_tmux_bridge.sh s", "mode main"]
+#d = ["exec-and-forget aerospace_tmux_bridge.sh d", "mode main"]
+#f = ["exec-and-forget aerospace_tmux_bridge.sh f", "mode main"]
+#g = ["exec-and-forget aerospace_tmux_bridge.sh g", "mode main"]
+#h = ["exec-and-forget aerospace_tmux_bridge.sh h", "mode main"]
+#j = ["exec-and-forget aerospace_tmux_bridge.sh j", "mode main"]
+#k = ["exec-and-forget aerospace_tmux_bridge.sh k", "mode main"]
+#l = ["exec-and-forget aerospace_tmux_bridge.sh l", "mode main"]
+#z = ["exec-and-forget aerospace_tmux_bridge.sh z", "mode main"]
+#x = ["exec-and-forget aerospace_tmux_bridge.sh x", "mode main"]
+#c = ["exec-and-forget aerospace_tmux_bridge.sh c", "mode main"]
+#v = ["exec-and-forget aerospace_tmux_bridge.sh v", "mode main"]
+## b = "exec-and-forget aerospace_tmux_bridge.sh b"
+#n = ["exec-and-forget aerospace_tmux_bridge.sh n", "mode main"]
+#m = ["exec-and-forget aerospace_tmux_bridge.sh m", "mode main"]
+#
+## Special characters for tmux (e.g., pane splitting, window commands)
+## Quote them as needed for TOML and shell.
+## The script receives them as a string. AppleScript's `keystroke` handles most.
+## '%' might need to be `\"%\"` if it has shell meaning not intended.
+## For TOML, literal strings might be easier for some: '"' = '...'
+## Or ensure the script handles argument passing robustly.
+## Simple characters are usually fine.
+##percent = "exec-and-forget /usr/local/bin/aerospace_tmux_bridge.sh \"%\""        # For '%' (split pane)
+#quote = [
+#  "exec-and-forget aerospace_tmux_bridge.sh \\\"",
+#  "mode main",
+#] # For '"' (split pane) - escaped for TOML string then shell
+#leftSquareBracket = ["exec-and-forget aerospace_tmux_bridge.sh [", "mode main"]
+#rightSquareBracket = ["exec-and-forget aerospace_tmux_bridge.sh ]", "mode main"]
+## Add other keys like 'pageUp', 'pageDown', arrow keys if you use them with ctrl-b
+
+esc = 'mode main' # Pressing Esc will return to the main mode
+# You could also bind ctrl-g (a common "cancel" in Emacs/tmux contexts)
+ctrl-g = 'mode main'

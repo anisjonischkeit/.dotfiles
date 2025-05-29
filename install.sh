@@ -3,7 +3,7 @@
 # arrays.  Didn't want to investigate, so I just did zsh
 
 export DOTFILES=$HOME/.dotfiles
-export STOW_FOLDERS="bin,zsh,tmux,nvim"
+export STOW_FOLDERS="zsh,tmux,nvim,aerospace"
 
 source ~/.zshenv-local
 

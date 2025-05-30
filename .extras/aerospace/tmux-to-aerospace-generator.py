@@ -163,8 +163,10 @@ def generate_aerospace_config_lines(tmux_bindings):
             continue
 
         mainModeReset = "mode main"
-        if (tmux_flag == "-r"):
-            mainModeReset = "exec-and-forget sleep 0.5 && aerospace " + mainModeReset
+        # TURN OFF FOR NOW... this causes an issue as we should only be able 
+        # to repeat the SINGLE KEY, not ANY TMUX KEY
+        # if (tmux_flag == "-r"):
+        #     mainModeReset = "exec-and-forget sleep 0.5 && aerospace " + mainModeReset
         
         additionalTmuxFlags = ""
         if ("new-window" in tmux_cmd or 

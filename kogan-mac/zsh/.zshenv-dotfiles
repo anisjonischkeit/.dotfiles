@@ -1,0 +1,10 @@
+export ZK_NOTEBOOK_DIR="/Users/anis.jonischkeit/repos/notes"
+
+# FIX FOR NEOVIM
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_TYPE=en_US.UTF-8
+
+# SESSIONIZER
+export TMUX_SESSIONIZER_DIRECTORIES="$(find ~/repos ~ -mindepth 1 -maxdepth 1 -type d)"

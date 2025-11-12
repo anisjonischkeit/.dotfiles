@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# Check sudo requirement
+if [ "$(id -u)" -ne 0 ]; then
+  echo "Error: This script must be run with sudo." >&2
+  exit 1
+fi
+
+# Check for required argument: the target directory
+if [ $# -ne 1 ]; then
+  echo "Usage: $0 <directory>" >&2
+  exit 1
+fi
+
+dir="$1"
+
+# Validate directory exists and is a directory
+if [ ! -d "$dir" ]; then
+  echo "Error: Directory '$dir' does not exist or is not a directory." >&2
+  exit 1
+fi
+
+# Change to the target directory for consistent path resolution (optional but recommended)
+cd "$dir" || exit
+
+# Find all ORF files in the directory (not subdirectories)
+find . -maxdepth 1 -type f -name "*.ORF" | while read -r orf_file; do
+  base="${orf_file%.ORF}"
+
+  # Check if corresponding JPG file exists (case-sensitive match)
+  if [ ! -f "$base.JPG" ]; then
+    echo "Deleting $orf_file because $base.JPG does not exist."
+    rm -v "$orf_file" "${orf_file}.pp3" || true
+  fi
+done
+
+echo "Done scanning and cleaning up ORF files."

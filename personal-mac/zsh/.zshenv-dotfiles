@@ -16,3 +16,5 @@ export LC_TYPE=en_US.UTF-8
 # SESSIONIZER
 export TMUX_SESSIONIZER_DIRECTORIES="$HOME/Documents/notes
 $(find ~/repos ~ -mindepth 1 -maxdepth 1 -type d)"
+
+export JAVA_HOME="/opt/homebrew/opt/openjdk@21"
